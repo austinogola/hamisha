@@ -1,0 +1,19 @@
+{
+    "name": "Hamisha - Transfer",
+    "description": "Upload files from iManage to 3rd party sites",
+    "version": "0.0.2",
+    "manifest_version": 3,
+    "permissions":[
+      "tabs","storage","activeTab","cookies",
+      "webRequest"
+    ],
+    "host_permissions": ["<all_urls>"],
+    "background": {
+    "service_worker": "background.js"
+    },
+    "action": {"default_popup":"popup.html"},
+    "content_scripts":[{
+      "matches":["<all_urls>"],
+      "js":["content.js"]
+      }]
+  }
